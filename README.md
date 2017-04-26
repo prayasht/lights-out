@@ -1,2 +1,1 @@
-# lights-out
-- Simple Lights Out
+## http://effulgence.io/lights-out
