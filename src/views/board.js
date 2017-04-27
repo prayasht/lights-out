@@ -21,6 +21,6 @@ export default function Board({ lights, height, width, send }) {
 
 Board.defaultProps = {
   lights: [],
-  height: Math.min(window.innerWidth / 2, 400),
-  width: Math.min(window.innerWidth / 2, 400)
+  height: Math.min(window.innerWidth / 2, 340),
+  width: Math.min(window.innerWidth / 2, 340)
 }

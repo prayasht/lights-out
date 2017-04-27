@@ -1,4 +1,4 @@
-import './style/application.css'
+import './style/index.css'
 import boot from './boot'
 
 // Do anything on startup here

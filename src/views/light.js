@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Light = ({ x, y, active, onClick }) => {
-  const color = active ? '#ebebeb' : '#4a5a93'
+  const color = active ? '#e2e2e2' : '#4a5a93'
 
   return (
     <g key={x} className='cell'>

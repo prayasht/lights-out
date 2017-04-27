@@ -11,21 +11,22 @@ class Main extends Presenter {
 
   getModel() {
     return {
-      lights: state => state.lights,
-      moves: state => state.game.moves,
-      best: state => state.game.best
+      hasWon: state => state.game.hasWon,
+      lights: state => state.game.lights,
+      moves: state => state.game.moves
     }
   }
 
   render() {
-    const { lights, moves, best } = this.model
-    
+    const { hasWon, lights, moves } = this.model
+    console.log('hasWon:', hasWon)
     return (
       <div>
         <hr />
         <Board lights={lights} />
         <hr />
-        <Stats moves={moves} best={best} />
+        <Stats moves={moves} />
+        <p>{hasWon}</p>
       </div>
     )
   }

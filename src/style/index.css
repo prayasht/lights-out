@@ -14,7 +14,7 @@ body {
 
 hr {
   width: 80%;
-  border-color: rgba(25, 40, 97, 0.15);
+  border-color: rgba(25, 40, 97, 0.1);
 }
 
 #root {
@@ -43,19 +43,19 @@ hr {
 
 .stats {
   font-weight: 200;
+  max-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 
 .stat {
-  display: inline-block;
+  flex-grow: 1;
   color: #192861;
   font-size: 24px;
   font-weight: 100;
   margin: 12px;
-}
-
-.moves::after {
-  content: '/';
-  margin-left: 36px;
+  letter-spacing: 2px;
 }
 
 .best {
@@ -69,7 +69,8 @@ circle {
 }
 
 rect:hover {
-  fill: #FAFAFA;
+  transition: fill-opacity 500ms;
+  fill-opacity: 0.75;
 }
 
 svg.board {
@@ -103,4 +104,17 @@ svg + svg {
 	animation: fadeIn ease-in 1;
 	animation-fill-mode: forwards;
 	animation-duration: 1s;
+}
+
+.restart {
+  width: 25px;
+  height: 20px;
+  padding: 12px;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.restart:hover {
+  opacity: 0.5;
 }
