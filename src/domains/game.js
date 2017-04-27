@@ -3,6 +3,7 @@ import { createRandomMatrix, verifyCompletion, computeNewMatrix } from '../helpe
 
 const Game = {
   getInitialState() {
+    console.info('Init.')
     return {
       hasWon: false,
       lights: createRandomMatrix(5),
@@ -23,6 +24,7 @@ const Game = {
   },
 
   resetGame() {
+    console.info('Reset game.')
     return {
       hasWon: false,
       lights: createRandomMatrix(5),

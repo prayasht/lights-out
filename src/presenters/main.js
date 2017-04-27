@@ -19,7 +19,6 @@ class Main extends Presenter {
 
   render() {
     const { hasWon, lights, moves } = this.model
-    console.log('hasWon:', hasWon)
     return (
       <div>
         <hr />
