@@ -1,6 +1,7 @@
 import React from 'react'
 import Presenter from 'microcosm/addons/presenter'
 import Board from '../views/board'
+import Mode from '../views/mode'
 import Stats from '../views/stats'
 
 class Main extends Presenter {
@@ -11,6 +12,7 @@ class Main extends Presenter {
 
   getModel() {
     return {
+      mode: state => state.game.mode,
       hasWon: state => state.game.hasWon,
       lights: state => state.game.lights,
       moves: state => state.game.moves
@@ -18,14 +20,18 @@ class Main extends Presenter {
   }
 
   render() {
-    const { hasWon, lights, moves } = this.model
+    const { hasWon, lights, mode, moves } = this.model
+    console.log(hasWon)
     return (
       <div>
         <hr />
         <Board lights={lights} />
         <hr />
+        <Mode mode={mode} />
+        <hr />
         <Stats moves={moves} />
-        <p>{hasWon}</p>
+        {/*<h3>hasWon: {hasWon}</h3>*/}
+        
       </div>
     )
   }

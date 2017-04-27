@@ -5,3 +5,7 @@ export function flick(light) {
 export function reset() {
   return
 }
+
+export function changeMode(mode) {
+  return mode
+}

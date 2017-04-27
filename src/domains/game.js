@@ -1,4 +1,4 @@
-import { flick, reset } from '../actions/game'
+import { flick, reset, changeMode } from '../actions/game'
 import { createRandomMatrix, verifyCompletion, computeNewMatrix } from '../helpers'
 
 const Game = {
@@ -7,6 +7,7 @@ const Game = {
     return {
       hasWon: false,
       lights: createRandomMatrix(5),
+      mode: 'EASY',
       moves: 0
     }
   },
@@ -17,6 +18,7 @@ const Game = {
     // console.info('Clicked: x:', x, 'y:', y))
 
     return {
+      ...state,
       hasWon: verifyCompletion(computedMatrix),
       lights: computedMatrix,
       moves: state.moves + 1
@@ -28,14 +30,25 @@ const Game = {
     return {
       hasWon: false,
       lights: createRandomMatrix(5),
+      mode: 'EASY',
+      moves: 0
+    }
+  },
+
+  switchMode(state, mode) {
+    return {
+      hasWon: false,
+      lights: createRandomMatrix(5),
+      mode: mode,
       moves: 0
     }
   },
 
   register() {
     return {
-      [flick] : this.compute,
-      [reset] : this.resetGame
+      [flick]       : this.compute,
+      [reset]       : this.resetGame,
+      [changeMode]  : this.switchMode
     }
   }
 }
