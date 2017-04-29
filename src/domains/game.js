@@ -25,12 +25,13 @@ const Game = {
     }
   },
 
-  resetGame() {
+  // TODO: Red for hard, blue for easy!
+  resetGame(state) {
     console.info('Reset game.')
     return {
+      ...state,
       hasWon: false,
-      lights: createRandomMatrix(5),
-      mode: 'EASY',
+      lights: createRandomMatrix(5, 'NOT EASY'),
       moves: 0
     }
   },
@@ -38,7 +39,7 @@ const Game = {
   switchMode(state, mode) {
     return {
       hasWon: false,
-      lights: createRandomMatrix(5),
+      lights: createRandomMatrix(5, mode),
       mode: mode,
       moves: 0
     }
