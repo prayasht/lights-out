@@ -49,6 +49,7 @@ class Main extends Presenter {
 
   render() {
     const { hasWon, lights, mode, moves, showInfo, showSettings } = this.model
+    console.log(this.model)
     const { width, height } = this.state
 
     return (
@@ -56,18 +57,18 @@ class Main extends Presenter {
         <div id='wrapper'>
           <h1 className='title center'>Lights Out!</h1>
             <div id='main'>
-            <hr />
-            
-            <Board lights={lights} width={width} height={height} />
-            <hr />
+              <hr />
+              
+              <Board lights={lights} width={width} height={height} />
+              <hr />
 
-            <Menu moves={moves} activeMenuItem={{ showInfo, showSettings }}/>
-            <hr />
+              <Menu moves={moves} activeMenuItem={{ showInfo, showSettings }}/>
+              <hr />
 
-            <Mode mode={mode} open={showSettings} />
-            <Info open={showInfo} />
+              <Mode mode={mode} open={showSettings} />
+              <Info open={showInfo} />
 
-            { hasWon ? <Finish mode={mode} /> : null }
+              { hasWon ? <Finish mode={mode} /> : null }
           </div>
         </div>
       </div>
