@@ -54,7 +54,7 @@ export const computeNewMatrix = (mat, point) => {
 }
 
 /**
- * verifyCompletion: Computes the new matrix given an old matrix and the toggled point
+ * verifyCompletion: Verifies whether the game has been won or not
  * @param {Array<Array>} mat - The matrix which will be verified
  * @return {Bool} - Whether the matrix has all lights turned off (0s)
  */
