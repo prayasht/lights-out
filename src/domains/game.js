@@ -1,4 +1,4 @@
-import { flick, reset, changeMode } from '../actions/game'
+import { changeMode, flick, info, reset, settings } from '../actions/game'
 import { createRandomMatrix, verifyCompletion, computeNewMatrix } from '../helpers'
 
 const Game = {
@@ -8,14 +8,16 @@ const Game = {
       hasWon: false,
       lights: createRandomMatrix(5),
       mode: 'EASY',
-      moves: 0
+      moves: 0,
+      showInfo: false,
+      showSettings: false,
     }
   },
 
   compute(state, { y, x }) {
     const computedMatrix = computeNewMatrix(state.lights, { y, x })
     // computedMat.map(x => console.info('row:', x.toString()))
-    // console.info('Clicked: x:', x, 'y:', y))
+    console.info('Clicked: x:', x, 'y:', y)
 
     return {
       ...state,
@@ -31,13 +33,33 @@ const Game = {
     return {
       ...state,
       hasWon: false,
-      lights: createRandomMatrix(5, 'NOT EASY'),
+      lights: createRandomMatrix(5, state.mode),
       moves: 0
     }
   },
 
-  switchMode(state, mode) {
+  showSettings(state) {
+    console.info('Toggle settings.')
     return {
+      ...state,
+      showInfo: false,
+      showSettings: !state.showSettings
+    }
+  },
+
+  showInfo(state) {
+    console.info('Toggle info.')
+    return {
+      ...state,
+      showInfo: !state.showInfo,
+      showSettings: false
+    }
+  },
+
+  switchMode(state, mode) {
+    console.info('Switch mode to:', mode)
+    return {
+      ...state,
       hasWon: false,
       lights: createRandomMatrix(5, mode),
       mode: mode,
@@ -47,9 +69,11 @@ const Game = {
 
   register() {
     return {
+      [changeMode]  : this.switchMode,
       [flick]       : this.compute,
+      [info]        : this.showInfo,
       [reset]       : this.resetGame,
-      [changeMode]  : this.switchMode
+      [settings]    : this.showSettings
     }
   }
 }

@@ -1,8 +1,10 @@
 import React from 'react'
 import Presenter from 'microcosm/addons/presenter'
 import Board from '../views/board'
+import Finish from '../views/finish'
+import Info from '../views/info'
+import Menu from '../views/menu'
 import Mode from '../views/mode'
-import Stats from '../views/stats'
 
 class Main extends Presenter {
 
@@ -15,6 +17,7 @@ class Main extends Presenter {
   }
 
   setup(repo) {
+    // ... prep work
     // repo.push(getMain)
   }
 
@@ -23,7 +26,9 @@ class Main extends Presenter {
       mode: state => state.game.mode,
       hasWon: state => state.game.hasWon,
       lights: state => state.game.lights,
-      moves: state => state.game.moves
+      moves: state => state.game.moves,
+      showInfo: state => state.game.showInfo,
+      showSettings: state => state.game.showSettings
     }
   }
 
@@ -36,11 +41,10 @@ class Main extends Presenter {
       width: Math.min(window.innerWidth / 2, 340),
       height: Math.min(window.innerWidth / 2, 340)
     })
-    console.log(this.state)
   }
 
   render() {
-    const { hasWon, lights, mode, moves } = this.model
+    const { hasWon, lights, mode, moves, showInfo, showSettings } = this.model
     const { width, height } = this.state
 
     return (
@@ -52,26 +56,14 @@ class Main extends Presenter {
             
             <Board lights={lights} width={width} height={height} />
             <hr />
-            
-            <Mode mode={mode} />
+
+            <Menu moves={moves} />
             <hr />
 
-            <Stats moves={moves} />
+            <Mode mode={mode} open={showSettings} />
+            <Info open={showInfo} />
 
-            {hasWon ?
-              <div className='modal fade-in-fast'>
-                <div className='modal-card splat'>
-                  <h4 className='modal-dialog'><strong>You win!</strong><br/>Wanna try 'Not Easy' mode? 😏</h4>
-                  <div className='modal-ctrls'>
-                    <button className='modal-btn cta'>Let's do it!</button>
-                    <button className='modal-btn'>I'll stick to easy.</button>
-                  </div>
-                </div>
-              </div>
-            :
-              ''
-            }
-            
+            { hasWon ? <Finish /> : null }
           </div>
         </div>
       </div>

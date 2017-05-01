@@ -3,11 +3,11 @@ export const createRandomMatrix = (size, mode = 'EASY') => {
 
   if (mode === 'EASY') {
     mat = [
-      [1, 1, 1, 0, 0],
-      [1, 1, 1, 1, 0],
-      [1, 0, 1, 1, 1],
-      [0, 0, 0, 1, 1],
-      [1, 0, 1, 1, 1]
+      [1, 1, 0, 1, 1],
+      [1, 0, 1, 0, 1],
+      [0, 1, 1, 1, 0],
+      [1, 0, 1, 0, 1],
+      [1, 1, 0, 1, 1]
     ]
   } else {
     while (mat.length < size) {
@@ -45,11 +45,12 @@ export const verifyCompletion = (matrix) => {
   // If there's a 0 at any point, the game is not complete
   for (let row of matrix) {
     for (let element of row) {
-      if (element === 0) {
+      if (element === 1) {
         return false
       }
     }
   }
 
+  console.info('Won game.')
   return true
 }

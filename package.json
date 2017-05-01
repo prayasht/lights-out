@@ -1,6 +1,6 @@
 {
-  "name": "microcosm-quickstart",
-  "version": "0.0.1",
+  "name": "lights-out",
+  "version": "1.0.0",
   "private": true,
   "devDependencies": {
     "enzyme": "^2.6.0",

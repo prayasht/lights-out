@@ -13,7 +13,8 @@ const Light = ({ x, y, active, onClick }) => {
         width="0.75"
         height="0.75"
         rx="0.1"
-        ry="0.1" />
+        ry="0.1"
+        filter="url(#dropshadow)" />
     </g>
   )
 }

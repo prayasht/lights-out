@@ -1,6 +1,6 @@
 import visit from '../helpers/visit'
 
-describe('home', function () {
+describe('home', () => {
 
   // This is a sample test. Visit a page and assert the result of interactions.
   // http://nightmarejs.org
