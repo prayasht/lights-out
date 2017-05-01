@@ -52,7 +52,7 @@ class Main extends Presenter {
     const { width, height } = this.state
 
     return (
-      <div id='container' className={'fade-in ' + (mode === 'EASY' ? 'bg-blue' : 'bg-red')}>
+      <div id='container' className={'fade-in ' + (mode === 'EASY' ? 'bg-light' : 'bg-dark')}>
         <div id='wrapper'>
           <h1 className='title center'>Lights Out!</h1>
             <div id='main'>
@@ -67,7 +67,7 @@ class Main extends Presenter {
             <Mode mode={mode} open={showSettings} />
             <Info open={showInfo} />
 
-            { hasWon ? <Finish /> : null }
+            { hasWon ? <Finish mode={mode} /> : null }
           </div>
         </div>
       </div>

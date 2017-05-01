@@ -29,12 +29,12 @@ hr {
   min-height: 100%;
   transition: background 1s ease-out;
 
-  &.bg-blue {
+  &.bg-light {
     background: #A2ACE0;
     // background: #A4B2E6;
   }
 
-  &.bg-red {
+  &.bg-dark {
     // background: #ff5370;
     background: #7783C6;
   }
@@ -44,11 +44,4 @@ hr {
     padding: 40px 40px;
     margin: 0 auto;
   }
-}
-
-.divider {
-  font-size: 24px;
-  font-weight: 100;
-  padding: 0 5px;
-  color: rgba(25, 40, 97, 0.5);
 }

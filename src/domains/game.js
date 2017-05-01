@@ -6,8 +6,8 @@ const Game = {
     console.info('Init.')
     return {
       hasWon: false,
-      lights: createRandomMatrix(5),
-      mode: 'EASY',
+      lights: createRandomMatrix(5, '!EASY'),
+      mode: '!EASY',
       moves: 0,
       showInfo: false,
       showSettings: false,

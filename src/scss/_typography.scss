@@ -19,14 +19,14 @@ button {
   transition: color 0.5s ease-out;
 }
 
-.bg-blue {
+.bg-light {
   .title, .stat, .mode, .fa, .info, .link { color: $dark; }
   hr { border-color: rgba(25, 40, 97, 0.1); }
 }
 
-.bg-red {
-  .title, .stat, .mode, .fa, .info, .link { color: $light; }
-  hr { border-color: rgba(252, 184, 196, 0.25); }
+.bg-dark {
+  .title, .stat, .mode, .fa, .info, .link, .divider { color: $light; }
+  hr { border-color: rgba(227, 227, 227, 0.25); }
 }
 
 .center {
@@ -43,4 +43,16 @@ button {
 
 i.active {
   opacity: 1;
+}
+
+.fa {
+  opacity: 0.75;
+  font-size: 18px;
+  margin: 12px;
+  cursor: pointer;
+  transition: color 0.5s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
 }

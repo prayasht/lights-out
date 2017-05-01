@@ -1,7 +1,7 @@
 /**
  * createRandomMatrix: Creates a random matrix of 0s or 1s
  * @param {Int} size - The size of the matrix, 5 by default
- * @param {Int} mode - The difficulty mode
+ * @param {String} mode - The difficulty mode, EASY by default
  * @return {Array<Array>} - 2D array which represents the Lights Out matrix
  */
 export const createRandomMatrix = (size = 5, mode = 'EASY') => {
@@ -89,7 +89,7 @@ export const calculateBoardDimensions = () => {
 
 
 /**
- * scrollTo: Scrolls to the bottom of the page
+ * scrollTo: Scrolls to a given point of the page
  * Acquired from https://gist.github.com/andjosh/6764939
  */
 export const scrollTo = (element, to, duration) => {
