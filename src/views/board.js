@@ -8,21 +8,6 @@ export default function Board({ lights, height, width, send }) {
 
   return (
     <svg className='board' width={width} height={height}>
-      <defs>
-			
-        <filter id="dropshadow" height="130%">
-          <feGaussianBlur in="SourceAlpha" stdDeviation="10"/> 
-          <feOffset dx="4" dy="40" result="offsetblur"/>
-          <feComponentTransfer>
-            <feFuncA type="linear" slope="0.2"/>
-          </feComponentTransfer>
-          <feMerge> 
-            <feMergeNode/>
-            <feMergeNode in="SourceGraphic"/> 
-          </feMerge>
-        </filter>
-
-      </defs>
       <g
         transform={transform}
         stroke="#4a5a93"

@@ -39,11 +39,16 @@ hr {
 }
 
 .bg-blue {
-  background: #A2ACD0;
+  /*background: #A2ACD0;*/
+  background: #A4B2E6;
 }
 
 .bg-red {
   background: #ff5370;
+}
+
+i.active {
+  opacity: 1;
 }
 
 .title {
@@ -138,14 +143,14 @@ svg + svg {
 
 .restart {
   color: #4a5a93;
-  margin: 12px;
+  opacity: 0.5;
   font-size: 18px;
+  margin: 12px;
   cursor: pointer;
-  transition: all 250ms;
 }
 
-.restart:hover::before {
-  opacity: 0.25;
+.restart:hover {
+  opacity: 1;
 }
 
 .mode-switcher {
@@ -261,6 +266,13 @@ svg + svg {
   background: #4a5a94;
 }
 
+.divider {
+  font-size: 24px;
+  font-weight: 100;
+  padding: 0 5px;
+  color: rgba(25, 40, 97, 0.5);
+}
+
 .splat {
   -webkit-animation: splat 1.5s linear both;
   animation: splat 1.5s linear both;
@@ -283,4 +295,10 @@ svg + svg {
 .animation-target {
   -webkit-animation: animation 1000ms linear both;
   animation: animation 1000ms linear both;
+}
+
+@media only screen and (max-device-width : 480px) {
+  hr {
+    width: 100%;
+  }
 }

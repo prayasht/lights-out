@@ -1,5 +1,7 @@
 import React from 'react'
 import Presenter from 'microcosm/addons/presenter'
+import { calculateBoardDimensions } from '../helpers'
+
 import Board from '../views/board'
 import Finish from '../views/finish'
 import Info from '../views/info'
@@ -10,9 +12,10 @@ class Main extends Presenter {
 
   constructor() {
     super()
+    const dimensions = calculateBoardDimensions()
     this.state = {
-      width: Math.min(window.innerWidth / 2, 340),
-      height: Math.min(window.innerWidth / 2, 340)
+      width: dimensions.width,
+      height: dimensions.height
     }
   }
 
@@ -37,9 +40,10 @@ class Main extends Presenter {
   }
 
   updateDimensions = () => {
+    const updatedDims = calculateBoardDimensions()
     this.setState({
-      width: Math.min(window.innerWidth / 2, 340),
-      height: Math.min(window.innerWidth / 2, 340)
+      width: updatedDims.width,
+      height: updatedDims.height
     })
   }
 
@@ -57,7 +61,7 @@ class Main extends Presenter {
             <Board lights={lights} width={width} height={height} />
             <hr />
 
-            <Menu moves={moves} />
+            <Menu moves={moves} activeMenuItem={{ showInfo, showSettings }}/>
             <hr />
 
             <Mode mode={mode} open={showSettings} />

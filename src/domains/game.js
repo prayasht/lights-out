@@ -16,7 +16,7 @@ const Game = {
 
   compute(state, { y, x }) {
     const computedMatrix = computeNewMatrix(state.lights, { y, x })
-    // computedMat.map(x => console.info('row:', x.toString()))
+    // computedMatrix.map(x => console.info('row:', x.toString()))
     console.info('Clicked: x:', x, 'y:', y)
 
     return {
@@ -27,7 +27,6 @@ const Game = {
     }
   },
 
-  // TODO: Red for hard, blue for easy!
   resetGame(state) {
     console.info('Reset game.')
     return {
