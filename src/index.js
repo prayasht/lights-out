@@ -1,6 +1,5 @@
 import boot from './boot'
-import './style/reset.css'
-import './style/index.css'
+import './scss/index.scss'
 
 // Do anything on startup here
 

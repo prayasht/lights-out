@@ -1,0 +1,27 @@
+rect,
+circle {
+  transition: 0.3s fill, 0.3s r;
+  cursor: pointer;
+}
+
+rect:hover {
+  transition: fill-opacity 500ms;
+  fill-opacity: 0.75;
+}
+
+svg.board {
+  margin: 12px auto;
+  display: block;
+}
+
+.row {
+  transform: scale(1.125, 1.125);
+}
+
+.cell {
+  transform: scale(0.85, 0.85);
+}
+
+svg + svg {
+  border-left: 0;
+}

@@ -1,0 +1,36 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.title {
+  font-weight: 200;
+  color: #192861;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  margin: 24px 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.link {
+  font-weight: bold;
+  color: #192861;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+i.active {
+  opacity: 1;
+}
