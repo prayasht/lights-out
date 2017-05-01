@@ -49,7 +49,6 @@ class Main extends Presenter {
 
   render() {
     const { hasWon, lights, mode, moves, showInfo, showSettings } = this.model
-    console.log(this.model)
     const { width, height } = this.state
 
     return (
