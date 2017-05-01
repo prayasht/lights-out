@@ -9,8 +9,6 @@ html {
 
 hr {
   width: 80%;
-  border-color: rgba(25, 40, 97, 0.1);
-
   @media only screen and (max-device-width : 480px) {
     width: 100%;
   }
@@ -37,7 +35,8 @@ hr {
   }
 
   &.bg-red {
-    background: #ff5370;
+    // background: #ff5370;
+    background: #7783C6;
   }
 
   #wrapper {

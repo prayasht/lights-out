@@ -14,19 +14,19 @@
 
 .stat {
   flex-grow: 1;
-  color: #192861;
   font-size: 18px;
   font-weight: 100;
   margin: 12px;
   letter-spacing: 2px;
+  transition: color 0.5s ease-out;
 }
 
-.restart {
-  color: #4a5a93;
-  opacity: 0.5;
+.fa {
+  opacity: 0.75;
   font-size: 18px;
   margin: 12px;
   cursor: pointer;
+  transition: color 0.5s ease-out;
 
   &:hover {
     opacity: 1;
@@ -45,7 +45,6 @@
 .mode {
   flex-grow: 1;
   font-size: 18px;
-  color: #192861;
   font-weight: 300;
   padding: 12px;
   margin: 12px 6px;
@@ -70,7 +69,6 @@
   > article {
     text-align: left;
     flex-grow: 1;
-    color: #192861;
     font-size: 14px;
     font-weight: 100;
     margin: 12px;
