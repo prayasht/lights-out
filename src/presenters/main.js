@@ -9,7 +9,6 @@ import Menu from '../views/menu'
 import Mode from '../views/mode'
 
 class Main extends Presenter {
-
   constructor() {
     super()
     const dimensions = calculateBoardDimensions()
@@ -17,11 +16,6 @@ class Main extends Presenter {
       width: dimensions.width,
       height: dimensions.height
     }
-  }
-
-  setup(repo) {
-    // ... prep work
-    // repo.push(getMain)
   }
 
   getModel() {
@@ -36,7 +30,7 @@ class Main extends Presenter {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions);
+    window.addEventListener('resize', this.updateDimensions)
   }
 
   updateDimensions = () => {
@@ -52,22 +46,25 @@ class Main extends Presenter {
     const { width, height } = this.state
 
     return (
-      <div id='container' className={'fade-in ' + (mode === 'EASY' ? 'bg-light' : 'bg-dark')}>
-        <div id='wrapper'>
-          <h1 className='title center'>Lights Out!</h1>
-            <div id='main'>
-              <hr />
-              
-              <Board lights={lights} width={width} height={height} />
-              <hr />
+      <div
+        id="container"
+        className={'fade-in ' + (mode === 'EASY' ? 'bg-light' : 'bg-dark')}
+      >
+        <div id="wrapper">
+          <h1 className="title center">Lights Out!</h1>
+          <div id="main">
+            <hr />
 
-              <Menu moves={moves} activeMenuItem={{ showInfo, showSettings }}/>
-              <hr />
+            <Board lights={lights} width={width} height={height} />
+            <hr />
 
-              <Mode mode={mode} open={showSettings} />
-              <Info open={showInfo} />
+            <Menu moves={moves} activeMenuItem={{ showInfo, showSettings }} />
+            <hr />
 
-              { hasWon ? <Finish mode={mode} /> : null }
+            <Mode mode={mode} open={showSettings} />
+            <Info open={showInfo} />
+
+            {hasWon ? <Finish mode={mode} /> : null}
           </div>
         </div>
       </div>

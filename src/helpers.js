@@ -30,7 +30,6 @@ export const createRandomMatrix = (size = 5, mode = 'EASY') => {
   return mat
 }
 
-
 /**
  * computeNewMatrix: Computes the new matrix given an old matrix and the toggled point
  * @param {Array<Array>} mat - The matrix in which we will run the Lights Out algorithm
@@ -45,10 +44,10 @@ export const computeNewMatrix = (mat, point) => {
   newMat[y][x] = !newMat[y][x] | 0
 
   // Toggle neighbors
-  if (y !== 0)                      newMat[y - 1][x] = !newMat[y - 1][x] | 0
-  if (y !== newMat[x].length - 1)   newMat[y + 1][x] = !newMat[y + 1][x] | 0
-  if (x !== 0)                      newMat[y][x - 1] = !newMat[y][x - 1] | 0
-  if (x !== newMat.length - 1)      newMat[y][x + 1] = !newMat[y][x + 1] | 0
+  if (y !== 0) newMat[y - 1][x] = !newMat[y - 1][x] | 0
+  if (y !== newMat[x].length - 1) newMat[y + 1][x] = !newMat[y + 1][x] | 0
+  if (x !== 0) newMat[y][x - 1] = !newMat[y][x - 1] | 0
+  if (x !== newMat.length - 1) newMat[y][x + 1] = !newMat[y][x + 1] | 0
 
   return newMat
 }
@@ -58,8 +57,7 @@ export const computeNewMatrix = (mat, point) => {
  * @param {Array<Array>} mat - The matrix which will be verified
  * @return {Bool} - Whether the matrix has all lights turned off (0s)
  */
-export const verifyCompletion = (mat) => {
-
+export const verifyCompletion = mat => {
   // If there's a 0 at any point, the game is not complete
   for (let row of mat) {
     for (let element of row) {
@@ -72,7 +70,6 @@ export const verifyCompletion = (mat) => {
   console.info('Won game.')
   return true
 }
-
 
 /**
  * calculateBoardDimensions: Calculates the correct board dimensions given the viewport size
@@ -87,32 +84,31 @@ export const calculateBoardDimensions = () => {
   }
 }
 
-
 /**
  * scrollTo: Scrolls to a given point of the page
  * Acquired from https://gist.github.com/andjosh/6764939
  */
 export const scrollTo = (element, to, duration) => {
   let start = element.scrollTop,
-      change = to - start,
-      currentTime = 0,
-      increment = 20;
-      
+    change = to - start,
+    currentTime = 0,
+    increment = 20
+
   function animateScroll() {
-    currentTime += increment;
-    let val = Math.easeInOutQuad(currentTime, start, change, duration);
-    element.scrollTop = val;
+    currentTime += increment
+    let val = Math.easeInOutQuad(currentTime, start, change, duration)
+    element.scrollTop = val
     if (currentTime < duration) {
-      setTimeout(animateScroll, increment);
+      setTimeout(animateScroll, increment)
     }
-  };
-  
-  animateScroll();
+  }
+
+  animateScroll()
 }
 
 Math.easeInOutQuad = function(t, b, c, d) {
-  t /= d/2;
-	if (t < 1) return (c/2) * t * t + b;
-	t--;
-	return -c/2 * (t * (t - 2) - 1) + b;
-};
+  t /= d / 2
+  if (t < 1) return c / 2 * t * t + b
+  t--
+  return -c / 2 * (t * (t - 2) - 1) + b
+}

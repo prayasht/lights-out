@@ -7,12 +7,13 @@ export default function Board({ lights, height, width, send }) {
   const transform = `scale(${scaleX}, ${scaleY})`
 
   return (
-    <svg className='board' width={width} height={height}>
+    <svg className="board" width={width} height={height}>
       <g
         transform={transform}
         stroke="#4a5a93"
         strokeWidth={0.25 / scaleX}
-        strokeOpacity="0.5" >
+        strokeOpacity="0.5"
+      >
         {lights.map((row, y) => <Row key={y} cells={row} y={y} />)}
       </g>
     </svg>

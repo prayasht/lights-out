@@ -10,9 +10,9 @@ export function flick(light) {
 
 export function info() {
   setTimeout(() => {
-    scrollTo(document.body, document.body.scrollHeight, 500);
+    scrollTo(document.body, document.body.scrollHeight, 500)
   }, 100)
-  
+
   return
 }
 
