@@ -19,13 +19,11 @@ const Info = ({ open }) => {
         button presses as possible.
       </article>
       <article>
-        Made by Prayash Thapa (<a
-          href="http://effulgence.io"
-          target="_blank"
-          className="link"
-        >
-          effulgence.io
-        </a>).
+        Made by Prayash Thapa (
+        <a href="http://prayash.io" target="_blank" className="link">
+          prayash.io
+        </a>
+        ).
       </article>
     </div>
   )

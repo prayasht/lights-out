@@ -2,7 +2,7 @@
   "name": "lights-out",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://effulgence.io/lights-out",
+  "homepage": "http://lights-out.prayash.io",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
@@ -35,7 +35,6 @@
     "http-proxy-middleware": "0.17.2",
     "jest": "17.0.2",
     "json-loader": "0.5.4",
-    "nightmare": "^2.8.1",
     "node-sass": "^4.5.2",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",

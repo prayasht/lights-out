@@ -1,4 +1,4 @@
-## http://effulgence.io/lights-out
+## http://lights-out.prayash.io
 
 ### Build & Run
 
